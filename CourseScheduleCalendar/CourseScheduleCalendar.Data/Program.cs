@@ -24,7 +24,8 @@ namespace CourseScheduleCalendar
 
         public static void Main(string[] args)
         {
-            IEnumerable<string> courseScheduleText = File.ReadLines(scheduleDataPath).Where(line => !line.StartsWith("Sections Found for"));
+            IEnumerable<string> courseScheduleText = File.ReadLines(scheduleDataPath)
+                .Where(line => !line.StartsWith("Sections Found for") && !String.IsNullOrWhiteSpace(line));
             List<Course> courses = GetCoursesFromText(courseScheduleText);
 
             courses.ForEach(course => Console.WriteLine(course));
