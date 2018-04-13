@@ -9,10 +9,10 @@ namespace CourseScheduleCalendar
 {
     public class Program
     {
-        private const string courseNumberRegexText = @"^\b[A-Z]{3}\b\s*\b\d{4}\b";
+        private const string courseNumberRegexText = @"^\b[A-Z]{3}\b\s*\b\d{4,5}\b";
 
-        private const string courseRegexText = @"(?<courseNumber>\b[A-Z]{3}\b\s*\b\d{4}\b)\s+\-\s+(?<courseSection>\b\w{3}\b)\s+(?<courseName>.*)\s+CRN:";
-        private const string instructorsRegexText = @"Instructors:\s+(?<instructors>.*)\s+E-mail";
+        private const string courseRegexText = @"(?<courseNumber>\b[A-Z]{3}\b\s*\b\d{4,5}\b)\s+\-\s+(?<courseSection>\b\w{2,3}\b)\s+(?<courseName>.*)\s+CRN:";
+        private const string instructorsRegexText = @"Instructors:\s+(?<instructors>.*)\(P\)";
         private const string attributesRegexText = @"Attributes:\s+(?<attributes>.*)";
         private const string commentRegexText = @"Comment:\s+(?<comment>.*)\;";
         private static string courseDetailsRegexText = String.Join("|", courseRegexText, instructorsRegexText, attributesRegexText, commentRegexText);
