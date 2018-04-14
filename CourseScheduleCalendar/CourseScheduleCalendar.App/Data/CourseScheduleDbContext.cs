@@ -85,6 +85,8 @@ namespace CourseScheduleCalendar.App.Data
                 schedule.Property(entity => entity.StartTime)
                     .IsRequired()
                     .HasColumnType("time(7)");
+                schedule.Property(entity => entity.Location)
+                    .IsRequired();
                 schedule.Property(entity => entity.Days)
                     .IsRequired();
             });
