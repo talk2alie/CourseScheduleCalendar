@@ -45,11 +45,12 @@ namespace CourseScheduleCalendar.App.Data
                 course.Property(entity => entity.Name)
                     .HasMaxLength(50)
                     .IsRequired();
+                course.Property(entity => entity.Description)
+                    .HasMaxLength(255)
+                    .IsRequired();
                 course.HasIndex(entity => entity.Name)
                     .HasName("UNQ_Course_Name")
                     .IsUnique();
-                course.Property(entity => entity.Description)
-                    .IsRequired();
                 course.HasMany(entity => entity.Sections)
                     .WithOne(section => section.Course);
             });
