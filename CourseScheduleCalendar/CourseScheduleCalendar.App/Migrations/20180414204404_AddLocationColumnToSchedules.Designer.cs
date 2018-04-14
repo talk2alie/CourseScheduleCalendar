@@ -11,9 +11,10 @@ using System;
 namespace CourseScheduleCalendar.App.Migrations
 {
     [DbContext(typeof(CourseScheduleDbContext))]
-    partial class CourseScheduleDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180414204404_AddLocationColumnToSchedules")]
+    partial class AddLocationColumnToSchedules
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
