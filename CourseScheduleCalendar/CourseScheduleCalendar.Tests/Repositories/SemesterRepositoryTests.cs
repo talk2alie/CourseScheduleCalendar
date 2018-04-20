@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
+﻿using CourseScheduleCalendar.Data;
+using CourseScheduleCalendar.Repositories;
 
 namespace CourseScheduleCalendar.Tests.Repositories
 {
-    public  class SemesterRepositoryTests
+    public class SemesterRepositoryTests
     {
-        
+        private readonly ISemesterRepository _semesterRepository;
+        private readonly CourseScheduleDbContext _courseScheduleDbContext;
     }
 }
