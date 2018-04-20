@@ -121,10 +121,12 @@ namespace CourseScheduleCalendar.Data
                 semester.Property(entity => entity.Id)
                     .HasColumnName("SemesterId");
                 semester.Property(entity => entity.Name)
-                    .HasMaxLength(50)
+                    .HasMaxLength(12)
                     .IsRequired();
-                semester.Property(entity => entity.Description)
-                    .HasMaxLength(255);
+                semester.Property(entity => entity.StartDate)
+                    .HasColumnType("date");
+                semester.Property(entity => entity.EndDate)
+                    .HasColumnType("date");
                 semester.HasIndex(entity => entity.Name)
                     .IsUnique()
                     .HasName("UNQ_Semester_Name");
