@@ -1,5 +1,7 @@
+using CourseScheduleCalendar.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -18,6 +20,9 @@ namespace CourseScheduleCalendar
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            string connectionString = Configuration.GetConnectionString("CourseScheduleDB");
+            services.AddDbContext<CourseScheduleDbContext>(optionsAction => optionsAction.UseSqlServer(connectionString));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace CourseScheduleCalendar.Services
 {
-    public interface IModelToDomainService
+    public interface ICourseScheduleMappingService
     {
-        Task<Semester> TransformModelToSemesterDomainAsync(SemesterViewModel semesterViewModel); 
+        Task<Semester> MapViewModelToSemesterDomain(SemesterViewModel semesterViewModel); 
     }
 }
